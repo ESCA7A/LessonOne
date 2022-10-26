@@ -1,14 +1,13 @@
 <?php
 
-namespace Shellpea\TaskThree;
+namespace Shellpea\Three;
 
 class Task extends \Shellpea\Desc
 {
-    public function foo(){
+    public function foo()
+    {
         echo self::TASK_THREE;
         $a = readline("number A: ");
-        echo ($a % 2 == 0) ? 'false' : 'true';
+        echo ($a % 2 == 0) ? 'false' . PHP_EOL : 'true' . PHP_EOL;
     }
 }
-
-$oddNum = new Task(); $oddNum->foo();

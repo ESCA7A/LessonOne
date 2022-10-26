@@ -1,6 +1,6 @@
 <?php
 
-namespace Shellpea\TaskSix;
+namespace Shellpea\Six;
 
 class Task extends \Shellpea\Desc
 {

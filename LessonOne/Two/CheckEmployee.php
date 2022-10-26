@@ -2,7 +2,7 @@
 
 namespace Shellpea\Two;
 
-class Task extends \Shellpea\Desc
+class CheckEmployee extends \Shellpea\Desc
 {
     private $accept = "подходит";
     private $alert = "не подходит";

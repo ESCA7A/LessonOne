@@ -1,10 +1,11 @@
 <?php
 
-namespace Shellpea\Five_5;
+namespace Shellpea\Five;
 
 class Task extends \Shellpea\Desc
 {
-    public function tryLuck(){
+    public function tryLuck()
+    {
         echo self::TASK_FIVE;
         $ticket = readline("введите номер билета: ");
         $ticket = str_split($ticket);
