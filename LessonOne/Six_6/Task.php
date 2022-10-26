@@ -1,11 +1,8 @@
 <?php
 
-namespace shellpea\LessonOne\TaskSix;
+namespace Shellpea\TaskSix;
 
-require 'bootstrap.php';
-use shellpea\LessonOne\Desc;
-
-class Sale extends Desc
+class Task extends \Shellpea\Desc
 {
     public function trySale(){
         echo self::TASK_SIX;
@@ -19,4 +16,4 @@ class Sale extends Desc
     }
 }
 
-$sale = new Sale(); $sale->trySale();
+$sale = new Task(); $sale->trySale();

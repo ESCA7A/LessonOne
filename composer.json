@@ -1,7 +1,16 @@
 {
-  "autoload": {
-    "psr-4": {
-      "LessonOne\\": "LessonOne/"
-    }
-  }
+    "name": "esca7a/shellpea",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Shellpea\\": "LessonOne/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pavel Tankov",
+            "email": "pavel.tankov@shellpea.com"
+        }
+    ],
+    "require": {}
 }

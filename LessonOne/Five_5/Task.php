@@ -1,11 +1,8 @@
 <?php
 
-namespace shellpea\LessonOne\TaskFor;
+namespace Shellpea\Five_5;
 
-require 'bootstrap.php';
-use shellpea\LessonOne\Desc;
-
-class Ticket extends Desc
+class Task extends \Shellpea\Desc
 {
     public function tryLuck(){
         echo self::TASK_FIVE;
@@ -21,4 +18,4 @@ class Ticket extends Desc
     }
 }
 
-$ticket = new Ticket(); $ticket->tryLuck();
+$ticket = new Task(); $ticket->tryLuck();

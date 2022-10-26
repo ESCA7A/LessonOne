@@ -2,11 +2,9 @@
 /**
  * Class contains describtion
  */
-namespace shellpea\LessonOne;
+namespace Shellpea;
 
-require 'bootstrap.php';
-
-abstract class Desc implements ApiDescInterface
+abstract class Desc implements \Shellpea\ApiDescInterface
 {
     /**
      * some realisation standard methods

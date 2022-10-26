@@ -1,6 +1,6 @@
 <?php
 
-namespace shellpea\LessonOne;
+namespace Shellpea;
 
 interface ApiDescInterface{
     CONST TASK_ONE          = "В компьютер вводятся два числа.\nЕсли первое больше второго, то вычислить их сумму, иначе - произведение.\nПосле этого компьютер должен напечатать результат и текст ЗАДАЧА РЕШЕНА\n";

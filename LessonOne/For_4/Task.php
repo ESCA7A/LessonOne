@@ -1,11 +1,8 @@
 <?php
 
-namespace shellpea\LessonOne\TaskFor;
+namespace Shellpea\TaskFor;
 
-require 'bootstrap.php';
-use shellpea\LessonOne\Desc;
-
-class Pitcher extends Desc
+class Task extends \Shellpea\Desc
 {
     public function getPitch(){
         echo self::TASK_FOR;
@@ -17,4 +14,4 @@ class Pitcher extends Desc
     }
 }
 
-$pitcher = new Pitcher(); $pitcher->getPitch();
+$pitcher = new Task(); $pitcher->getPitch();

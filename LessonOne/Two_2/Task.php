@@ -1,11 +1,8 @@
 <?php
 
-namespace shellpea\LessonOne\TaskTwo;
+namespace Shellpea\TaskTwo;
 
-require 'bootstrap.php';
-use shellpea\LessonOne\Desc;
-
-class Employee extends Desc
+class Task extends \Shellpea\Desc
 {
     public $accept = "подходит";
     public $alert = "не подходит";
@@ -20,4 +17,4 @@ class Employee extends Desc
     }
 }
 
-$emp = new Employee(); $emp->result();
+$emp = new Task(); $emp->result();

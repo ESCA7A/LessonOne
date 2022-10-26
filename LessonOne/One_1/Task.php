@@ -1,11 +1,8 @@
 <?php
 
-namespace shellpea\LessonOne\TaskOne;
+namespace Shellpea\One_1;
 
-require 'bootstrap.php';
-use shellpea\LessonOne\Desc;
-
-class TwoNumbers extends Desc
+class Task extends \Shellpea\Desc
 {
     public function foo(){
         echo self::TASK_ONE;
@@ -14,5 +11,3 @@ class TwoNumbers extends Desc
         echo $num1 > $num2 ? $num1 + $num2 : $num1 / $num2;
     }
 }
-
-$twoNum = new TwoNumbers(); $twoNum->foo();
