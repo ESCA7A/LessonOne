@@ -1,6 +1,6 @@
 <?php
 
-namespace Shellpea\One_1;
+namespace Shellpea\One;
 
 class Task extends \Shellpea\Desc
 {

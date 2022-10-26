@@ -1,11 +1,12 @@
 <?php
 
-namespace Shellpea\TaskTwo;
+namespace Shellpea\Two;
 
 class Task extends \Shellpea\Desc
 {
-    public $accept = "подходит";
-    public $alert = "не подходит";
+    private $accept = "подходит";
+    private $alert = "не подходит";
+
     public function foo(){
         echo self::TASK_TWO;
         $age = readline("How old are you: ");
@@ -16,5 +17,3 @@ class Task extends \Shellpea\Desc
         if ($res === $this->accept || $res === $this->alert) {echo "\n$res";}
     }
 }
-
-$emp = new Task(); $emp->result();
