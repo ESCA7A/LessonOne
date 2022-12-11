@@ -4,9 +4,6 @@ namespace Shellpea\One;
 
 class TwoNumbers extends \Shellpea\Desc
 {
-    /**
-     * @return int
-     */
     public function foo(): int
     {
         echo self::TASK_ONE;

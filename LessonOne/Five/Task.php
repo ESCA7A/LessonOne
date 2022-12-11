@@ -18,5 +18,3 @@ class Task extends \Shellpea\Desc
         }
     }
 }
-
-$ticket = new Task(); $ticket->tryLuck();

@@ -2,7 +2,9 @@
 
 namespace Shellpea\Six;
 
-class Task extends \Shellpea\Desc
+use Shellpea\Desc;
+
+class Task extends Desc
 {
     public function trySale(){
         echo self::TASK_SIX;
@@ -15,5 +17,3 @@ class Task extends \Shellpea\Desc
         }
     }
 }
-
-$sale = new Task(); $sale->trySale();

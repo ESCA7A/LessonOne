@@ -13,5 +13,3 @@ class Task extends \Shellpea\Desc
         if ($pitch < 0) echo "НЕ БЕЙ ПО СВОИМ";
     }
 }
-
-$pitcher = new Task(); $pitcher->getPitch();
