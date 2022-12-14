@@ -4,21 +4,21 @@ ____
 [21:40:11] # you have composer
 [21:40:51] # you have php 8
 [21:41:11] [~/]❱❱❱ git clone git@github.com:ESCA7A/shellpea-backend.php-lesson1.git SHELLPEA-LESSON-ONE
-Cloning into 'SHELLPEA-LESSON-ONE'...
-remote: Enumerating objects: 206, done.
-remote: Counting objects: 100% (206/206), done.
-    ...
+#Cloning into 'SHELLPEA-LESSON-ONE'...
+#remote: Enumerating objects: 206, done.
+#remote: Counting objects: 100% (206/206), done.
+#    ...
 [21:43:30] [~/SHELLPEA-LESSON-ONE] git(master)❱❱❱ composer install      
-Installing dependencies from lock file (including require-dev)
-Package operations: 1 install, 0 updates, 0 removals
-  - Installing squizlabs/php_codesniffer (3.7.1): Extracting archive
-Generating autoload files
-...
+#Installing dependencies from lock file (including require-dev)
+#Package operations: 1 install, 0 updates, 0 removals
+#  - Installing squizlabs/php_codesniffer (3.7.1): Extracting archive
+#Generating autoload files
+#...
 [21:44:44] [~/SHELLPEA-LESSON-ONE] git(master)❱❱❱ php index.php
-
-         +------------------------------------------------------------+
-         | здесь собраны ответы на 18 задач в рамках обучающего курса |
-    ...
+#
+#         +------------------------------------------------------------+
+#         | здесь собраны ответы на 18 задач в рамках обучающего курса |
+#    ...
 ```
 
 _____
