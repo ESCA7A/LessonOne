@@ -8,6 +8,7 @@ ____
 #remote: Enumerating objects: 206, done.
 #remote: Counting objects: 100% (206/206), done.
 #    ...
+[21:41:50] [~/]❱❱❱ cd SHELLPEA-LESSON-ONE
 [21:43:30] [~/SHELLPEA-LESSON-ONE] git(master)❱❱❱ composer install      
 #Installing dependencies from lock file (including require-dev)
 #Package operations: 1 install, 0 updates, 0 removals
