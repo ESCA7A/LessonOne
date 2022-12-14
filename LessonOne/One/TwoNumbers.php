@@ -4,6 +4,10 @@ namespace Shellpea\One;
 
 class TwoNumbers extends \Shellpea\Desc
 {
+    public function __call($name, $arguments)
+    {
+    }
+
     public function foo(): int
     {
         echo self::TASK_ONE;

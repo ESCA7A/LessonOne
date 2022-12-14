@@ -10,6 +10,10 @@ class Task extends Desc
     const TRIANGLE_B = "Enter value triangle <b>: ";
     const TRIANGLE_C = "Enter value triangle <c>: ";
 
+    public function __call($name, $arguments)
+    {
+    }
+
     public function getDataAboutTriangle(): void
     {
         $a = abs((int) readline(self::TRIANGLE_A));

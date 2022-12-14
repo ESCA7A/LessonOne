@@ -7,6 +7,10 @@ class CheckEmployee extends \Shellpea\Desc
     private $accept = "подходит";
     private $alert = "не подходит";
 
+    public function __call($name, $arguments)
+    {
+    }
+
     public function foo(){
         echo self::TASK_TWO;
         $age = readline("How old are you: ");

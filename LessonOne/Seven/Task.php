@@ -9,6 +9,10 @@ class Task extends Desc
     const CIRCLE_PHRASE = "Enter the area of the circle: ";
     const SQUAD_PHRASE = "Enter the area of the squad: ";
 
+    public function __call($name, $arguments)
+    {
+    }
+
     private function getCircleDiameter(): ?int
     {
         $area = (int) readline(self::CIRCLE_PHRASE);

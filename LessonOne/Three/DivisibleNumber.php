@@ -2,8 +2,12 @@
 
 namespace Shellpea\Three;
 
-class Task extends \Shellpea\Desc
+class DivisibleNumber extends \Shellpea\Desc
 {
+    public function __call($name, $arguments)
+    {
+    }
+
     public function foo()
     {
         echo self::TASK_THREE;

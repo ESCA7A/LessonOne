@@ -4,6 +4,10 @@ namespace Shellpea\For;
 
 class Task extends \Shellpea\Desc
 {
+    public function __call($name, $arguments)
+    {
+    }
+
     public function getPitch(){
         echo self::TASK_FOR;
         $pitch = readline("до мишени около 30 метров. Бросайте: ");

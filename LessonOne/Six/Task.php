@@ -6,6 +6,10 @@ use Shellpea\Desc;
 
 class Task extends Desc
 {
+    public function __call($name, $arguments)
+    {
+    }
+
     public function trySale(){
         echo self::TASK_SIX;
         $order = readline("сумма покупки: ");

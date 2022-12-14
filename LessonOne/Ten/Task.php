@@ -8,6 +8,10 @@ class Task extends Desc
 {
     const FAC_PHRASE = "Enter the number what's be factorial: ";
 
+    public function __call($name, $arguments)
+    {
+    }
+
     public function foo()
     {
         $fac = abs((int) readline(self::FAC_PHRASE));

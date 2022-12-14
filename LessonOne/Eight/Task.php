@@ -8,6 +8,11 @@ class Task extends Desc
 {
     const NUMBER_PHRASE = "Enter the number around -5..3: ";
 
+    public function __call($name, $arguments)
+    {
+        $this->validateNumber();
+    }
+
     public function validateNumber(): bool
     {
         $number = (int) readline(self::NUMBER_PHRASE);
