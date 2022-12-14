@@ -1,8 +1,8 @@
 ## __How to deploy__
 ____
 ```bash
-[21:40:11] [~/]❱❱❱ you have composer
-[21:40:51] [~/]❱❱❱ you have php 8
+[21:40:11] # you have composer
+[21:40:51] # you have php 8
 [21:41:11] [~/]❱❱❱ git clone git@github.com:ESCA7A/shellpea-backend.php-lesson1.git SHELLPEA-LESSON-ONE
 Cloning into 'SHELLPEA-LESSON-ONE'...
 remote: Enumerating objects: 206, done.
