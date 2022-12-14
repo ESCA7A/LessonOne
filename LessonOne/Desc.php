@@ -11,17 +11,16 @@ abstract class Desc implements DeskInterface, TaskInterface
 
     static public function getMenu()
     {
-        echo self::DESC. PHP_EOL;
+        echo self::DESC . PHP_EOL;
+        self::QUIT_MESSAGE . PHP_EOL;
 
         for($i = 0; true; $i++) {
-            echo ($i != 1) ? self::QUIT_MESSAGE : PHP_EOL;
-
             $input = readline(self::INPUT);
 
-            if(preg_match_all('%[lL]ist%', $input)) {
+            if(preg_match_all('/list/iu', $input)) {
 
-                $engine = new ClassReader(new \Engine\PathHandler());
-                print_r($engine->list);
+                $classes = new ClassReader(new \Engine\PathHandler());
+                Decorator::getTaskBorder($classes->list);
             } else {
                 ObjectManager::create($input);
             }
