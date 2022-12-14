@@ -10,9 +10,8 @@ class ObjectManager
     {
         if(class_exists($class)) {
             $class = new $class();
-            $class->foo();
+            $class->magicCallMethod();
         } else {
-
             echo DeskInterface::MISSING_TASK_MESSAGE;
         }
     }

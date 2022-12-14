@@ -3,14 +3,16 @@
 namespace Shellpea\Seven;
 
 use Shellpea\Desc;
+use Shellpea\Decorator;
 
 class Task extends Desc
 {
-    const CIRCLE_PHRASE = "Enter the area of the circle: ";
-    const SQUAD_PHRASE = "Enter the area of the squad: ";
+    const CIRCLE_PHRASE = PHP_EOL . "Enter the area of the circle: ";
+    const SQUAD_PHRASE = PHP_EOL . "Enter the area of the squad: ";
 
     public function __call($name, $arguments)
     {
+        $this->calculate();
     }
 
     private function getCircleDiameter(): ?int
@@ -25,9 +27,10 @@ class Task extends Desc
         return sqrt(2 * $squadArea);
     }
 
-    public function calculate(): void
+    private function calculate(): void
     {
-        echo ($this->getCircleDiameter() >= $this->getSquadDiagonal()) ?
-            "квадрат поместиться в круге" : "круг поместиться в квадрате";
+        echo ($this->getCircleDiameter() >= $this->getSquadDiagonal())
+            ? Decorator::getAnswerBorder("квадрат поместиться в круге")
+            : Decorator::getAnswerBorder("круг поместиться в квадрате");
     }
 }

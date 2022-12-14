@@ -23,10 +23,16 @@ class ClassReader
         foreach($classesPath as $classPath) {
 
             $classPath = '/Shellpea/'. $classPath;
-            $classPath = $this->handler->replaceSlashes($classPath);
-            $classPath = $this->handler->removeWordAndBackslash($classPath, 'LessonOne');
-            $this->list[] = $this->handler->removeAfterDot($classPath);
+            $classPath = $this->handler->revertToBackSlashes($classPath);
+            $classPath = $this->handler->removeWordAndBackslashAfter($classPath, 'LessonOne');
+            $pathArray[] = $this->handler->removeAfterDot($classPath);
+        }
 
+        $reverseArray = array_flip($pathArray);
+
+        foreach ($reverseArray as $index => $value) {
+            $value = preg_replace(['/\\\Task/', '/LessonOne\\\/', '/\\\Shellpea\\\/' ], '', $index);
+            $this->list[$index] = $value;
         }
 
         return $this->list;

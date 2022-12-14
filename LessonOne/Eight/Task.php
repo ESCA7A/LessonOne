@@ -6,7 +6,7 @@ use Shellpea\Desc;
 
 class Task extends Desc
 {
-    const NUMBER_PHRASE = "Enter the number around -5..3: ";
+    const INPUT = PHP_EOL . "Enter the number around -5..3: ";
 
     public function __call($name, $arguments)
     {
@@ -15,15 +15,16 @@ class Task extends Desc
 
     public function validateNumber(): bool
     {
-        $number = (int) readline(self::NUMBER_PHRASE);
+        $number = (int) readline(self::INPUT);
 
         if ($number >= -5 && $number <= 3) {
-            echo "thanks a lot";
+            echo self::THANKS_MESSAGE;
 
             return true;
         }
 
-        echo "stupid human". PHP_EOL;
-        return false;
+        echo self::ERROR_INPUT;
+
+        return $this->validateNumber();
     }
 }

@@ -3,18 +3,20 @@
 namespace Shellpea\Ten;
 
 use Shellpea\Desc;
+use Shellpea\Decorator;
 
 class Task extends Desc
 {
-    const FAC_PHRASE = "Enter the number what's be factorial: ";
+    const INPUT = PHP_EOL . "Enter the number what's be factorial: ";
 
     public function __call($name, $arguments)
     {
+        $this->foo();
     }
 
-    public function foo()
+    private function foo(): void
     {
-        $fac = abs((int) readline(self::FAC_PHRASE));
+        $fac = abs((int) readline(self::INPUT));
 
         switch($fac) {
             case 0:
@@ -30,8 +32,9 @@ class Task extends Desc
                 for($i = 1, $summa = 1; $i <= $fac; $i++) {
                     $summa = $i * $summa;
                 }
-
-                echo $summa;
+                Decorator::getAnswerBorder($summa);
         }
     }
+
+
 }

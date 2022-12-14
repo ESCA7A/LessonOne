@@ -3,15 +3,17 @@
 namespace Shellpea\Nine;
 
 use Shellpea\Desc;
+use Shellpea\Decorator;
 
 class Task extends Desc
 {
-    const TRIANGLE_A = "Enter value triangle <a>: ";
-    const TRIANGLE_B = "Enter value triangle <b>: ";
-    const TRIANGLE_C = "Enter value triangle <c>: ";
+    const TRIANGLE_A = PHP_EOL . "Enter value triangle <a>: ";
+    const TRIANGLE_B = PHP_EOL . "Enter value triangle <b>: ";
+    const TRIANGLE_C = PHP_EOL . "Enter value triangle <c>: ";
 
     public function __call($name, $arguments)
     {
+        $this->getDataAboutTriangle();
     }
 
     public function getDataAboutTriangle(): void
@@ -21,10 +23,9 @@ class Task extends Desc
         $c = abs((int) readline(self::TRIANGLE_C));
 
         if ($a == $b || $a == $c  || $b == $c) {
-            echo "треугольник равнобедренный";
-
+            Decorator::getAnswerBorder("треугольник равнобедренный");
         } else {
-            echo "треугольник не равнобедренный";
+            Decorator::getAnswerBorder("треугольник не равнобедренный");
         }
     }
 }

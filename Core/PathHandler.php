@@ -4,11 +4,35 @@ namespace Engine;
 
 class PathHandler
 {
-    public function replaceSlashes(string $string): string|null
+    /**
+     * replace all </> slashes to <\> backslashes
+     *
+     * @param string $string
+     * @return string|null
+     */
+    public function revertToBackSlashes(string|array $subject): string|array
     {
-        return preg_replace('/\//', '\\', $string, -1);
+        if(is_array($subject)) {
+            foreach($subject as $record) {
+                $record = preg_replace('/\//', '\\', $record, -1);
+                $simpleArray[] = $record;
+            }
+
+            return $simpleArray;
+        }
+
+        if(is_string($subject)) {
+
+            return preg_replace('/\//', '\\', $subject, -1);
+        }
     }
 
+    /**
+     * remove dot and all words after
+     *
+     * @param array|string $data
+     * @return array|string|string[]|void
+     */
     public function removeAfterDot(array|string $data)
     {
         $simpleArray = [];
@@ -28,7 +52,14 @@ class PathHandler
         }
     }
 
-    public function removeWordAndBackslash(string|array $subject, string $word ): string|array|null
+    /**
+     * remove first param in string and removing 1 backslash after word
+     *
+     * @param string|array $subject
+     * @param string $word
+     * @return string|array|null
+     */
+    public function removeWordAndBackslashAfter(string|array $subject, string $word ): string|array|null
     {
         $simpleArray = [];
 
@@ -40,6 +71,26 @@ class PathHandler
         if(is_array($subject)) {
             foreach($subject as $item) {
                 $simpleArray[] = preg_replace("/{$word}\\\/", '', $subject, -1);
+            }
+
+            return $simpleArray;
+        }
+
+        return null;
+    }
+
+    public function removeWordAndBackslashBefore(string|array $subject, string $word ): string|array|null
+    {
+        $simpleArray = [];
+
+        if(is_string($subject)) {
+
+            return preg_replace("/\\\\{$word}/", '', $subject, -1);
+        }
+
+        if(is_array($subject)) {
+            foreach($subject as $item) {
+                $simpleArray[] = preg_replace("/\\\\{$word}/", '', $item, -1);
             }
 
             return $simpleArray;
