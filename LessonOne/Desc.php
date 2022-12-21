@@ -15,14 +15,15 @@ abstract class Desc implements DeskInterface, TaskInterface
         $pathHandler = new PathHandler();
         $classReader = new ClassReader($pathHandler);
 
-        echo self::DESC . PHP_EOL;
-        echo self::QUIT_MESSAGE . PHP_EOL;
+        echo DeskInterface::DESCRIPTION . PHP_EOL;
+        echo DeskInterface::QUIT_MESSAGE . PHP_EOL;
 
         for($i = 0; true; $i++) {
             $input = readline(self::INPUT);
 
             if(preg_match_all('/list/iu', $input) || preg_match_all('/help/iu', $input)) {
                 Decorator::getTaskBorder($classReader->list);
+                echo DeskInterface::HELP_MESSAGE;
             } else {
                 ObjectManager::create($input);
             }
