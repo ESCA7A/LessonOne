@@ -13,17 +13,21 @@ class Task extends Desc
         $this->validateNumber();
     }
 
-    public function validateNumber(): bool
+    public function validateNumber(): mixed
     {
-        $number = readline(self::INPUT);
+        $number = (int) readline(self::INPUT);
 
-        if ($number >= -5 && $number <= 3) {
-            echo self::THANKS_MESSAGE;
+        if(!is_numeric($number)) {
 
-            return true;
+            echo self::ERROR_INPUT;
+
+        } else {
+            if ($number >= -5 && $number <= 3) {
+                echo self::THANKS_MESSAGE;
+
+                return null;
+            }
         }
-
-        echo self::ERROR_INPUT;
 
         return $this->validateNumber();
     }
