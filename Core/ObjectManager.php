@@ -12,29 +12,20 @@ class ObjectManager
     {
         $pathHandler = new PathHandler();
         $classReader = new ClassReader($pathHandler);
+        $classPath = array_search($class, $classReader->list);
 
         if(is_numeric($class)) {
             $reverseArray = array_flip($classReader->list);
             $reverseArray = array_values($reverseArray);
             $class = new $reverseArray[$class - 1];
             $class->magicCallMethod();
-        }
 
-        $classPath = array_search($class, $classReader->list);
-
-        if(!class_exists($classPath)) {
-            foreach ($classReader->list as $key => $value) {
-                if(preg_match_all("/{$class}/iu", $key)) {
-                    $class = new $key();
-                    $class->magicCallMethod();
-                }
-            }
-        } else {
+        } elseif ($classPath) {
             $class = new $classPath();
             $class->magicCallMethod();
+
+        } else {
+            echo DeskInterface::MISSING_TASK_MESSAGE;
         }
-
-        echo DeskInterface::MISSING_TASK_MESSAGE;
-
     }
 }
