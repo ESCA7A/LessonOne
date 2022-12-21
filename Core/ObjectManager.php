@@ -20,14 +20,21 @@ class ObjectManager
             $class->magicCallMethod();
         }
 
-        $class = array_search($class, $classReader->list);
+        $classPath = array_search($class, $classReader->list);
 
-        if(class_exists($class)) {
-
-            $class = new $class();
-            $class->magicCallMethod();
+        if(!class_exists($classPath)) {
+            foreach ($classReader->list as $key => $value) {
+                if(preg_match_all("/{$class}/iu", $key)) {
+                    $class = new $key();
+                    $class->magicCallMethod();
+                }
+            }
         } else {
-            echo DeskInterface::MISSING_TASK_MESSAGE;
+            $class = new $classPath();
+            $class->magicCallMethod();
         }
+
+        echo DeskInterface::MISSING_TASK_MESSAGE;
+
     }
 }

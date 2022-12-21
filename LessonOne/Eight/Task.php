@@ -15,7 +15,7 @@ class Task extends Desc
 
     public function validateNumber(): bool
     {
-        $number = (int) readline(self::INPUT);
+        $number = readline(self::INPUT);
 
         if ($number >= -5 && $number <= 3) {
             echo self::THANKS_MESSAGE;
