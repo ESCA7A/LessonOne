@@ -8,9 +8,8 @@ class Decorator
     {
         echo PHP_EOL . "
         +-----------------------------------------+
-        |   OUTPUT : {$answerVariable}    
-        +-----------------------------------------+
-                " . PHP_EOL;
+        |   OUTPUT : {$answerVariable}
+        +-----------------------------------------+" . PHP_EOL;
     }
 
     static function getTaskBorder(array $arrayClasses): void

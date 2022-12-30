@@ -12,7 +12,7 @@ class PathHandler
      */
     public function revertToBackSlashes(string|array $subject): string|array
     {
-        if(is_array($subject)) {
+        if (is_array($subject)) {
             foreach($subject as $record) {
                 $record = preg_replace('/\//', '\\', $record, -1);
                 $simpleArray[] = $record;
@@ -21,10 +21,13 @@ class PathHandler
             return $simpleArray;
         }
 
-        if(is_string($subject)) {
+        if (is_string($subject)) {
 
             return preg_replace('/\//', '\\', $subject, -1);
         }
+
+        echo __FUNCTION__ . " is get incorrect param. Param has need string or array. get:" . PHP_EOL;
+        var_dump($subject);
     }
 
     /**
@@ -37,7 +40,7 @@ class PathHandler
     {
         $simpleArray = [];
 
-        if(is_array($data)) {
+        if (is_array($data)) {
             foreach($data as $record) {
                 $record = substr_replace($record , '', strrpos($record , '.'));
                 $simpleArray[] = $record;
@@ -46,7 +49,7 @@ class PathHandler
             return $simpleArray;
         }
 
-        if(is_string($data)) {
+        if (is_string($data)) {
 
             return substr_replace($data , '', strrpos($data , '.'));
         }
@@ -63,12 +66,12 @@ class PathHandler
     {
         $simpleArray = [];
 
-        if(is_string($subject)) {
+        if (is_string($subject)) {
 
             return preg_replace("/{$word}\\\/", '', $subject, -1);
         }
 
-        if(is_array($subject)) {
+        if (is_array($subject)) {
             foreach($subject as $item) {
                 $simpleArray[] = preg_replace("/{$word}\\\/", '', $subject, -1);
             }
@@ -79,23 +82,16 @@ class PathHandler
         return null;
     }
 
-    public function removeWordAndBackslashBefore(string|array $subject, string $word ): string|array|null
+    /**
+     * return param where only first symbol with uppercase
+     *
+     * @param string $taskname
+     * @return string
+     */
+    public function setFirstToUpper(string $taskname): string
     {
-        $simpleArray = [];
+        $taskname = mb_strtolower($taskname);
 
-        if(is_string($subject)) {
-
-            return preg_replace("/\\\\{$word}/", '', $subject, -1);
-        }
-
-        if(is_array($subject)) {
-            foreach($subject as $item) {
-                $simpleArray[] = preg_replace("/\\\\{$word}/", '', $item, -1);
-            }
-
-            return $simpleArray;
-        }
-
-        return null;
+        return ucfirst($taskname);
     }
 }

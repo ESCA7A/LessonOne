@@ -4,6 +4,7 @@ namespace Shellpea\Ten;
 
 use Shellpea\Desc;
 use Shellpea\Decorator;
+use Shellpea\TaskInterface;
 
 class Task extends Desc
 {
@@ -11,7 +12,8 @@ class Task extends Desc
 
     public function __call($name, $arguments)
     {
-        $this->foo();
+        echo TaskInterface::TASK_TEN;
+        return $this->foo();
     }
 
     private function foo(): void
@@ -32,9 +34,8 @@ class Task extends Desc
                 for($i = 1, $summa = 1; $i <= $fac; $i++) {
                     $summa = $i * $summa;
                 }
+
                 Decorator::getAnswerBorder($summa);
         }
     }
-
-
 }

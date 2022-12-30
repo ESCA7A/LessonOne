@@ -3,6 +3,8 @@
 namespace Shellpea\Eight;
 
 use Shellpea\Desc;
+use Shellpea\DeskInterface;
+use Shellpea\TaskInterface;
 
 class Task extends Desc
 {
@@ -10,23 +12,20 @@ class Task extends Desc
 
     public function __call($name, $arguments)
     {
+        echo TaskInterface::TASK_EIGHT;
         $this->validateNumber();
     }
 
-    public function validateNumber(): mixed
+    public function validateNumber()
     {
         $number = (int) readline(self::INPUT);
 
-        if(!is_numeric($number)) {
+        if (is_numeric($number) && $number >= -5 && $number <= 3) {
+            echo DeskInterface::THANKS_MESSAGE;
 
-            echo self::ERROR_INPUT;
-
+            return true;
         } else {
-            if ($number >= -5 && $number <= 3) {
-                echo self::THANKS_MESSAGE;
-
-                return null;
-            }
+            echo DeskInterface::ERROR_INPUT;
         }
 
         return $this->validateNumber();

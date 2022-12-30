@@ -4,6 +4,7 @@ namespace Shellpea\Seven;
 
 use Shellpea\Desc;
 use Shellpea\Decorator;
+use Shellpea\TaskInterface;
 
 class Task extends Desc
 {
@@ -12,7 +13,15 @@ class Task extends Desc
 
     public function __call($name, $arguments)
     {
-        $this->calculate();
+        echo TaskInterface::TASK_SEVEN;
+        return $this->calculate();
+    }
+
+    private function calculate(): void
+    {
+        echo ($this->getCircleDiameter() >= $this->getSquadDiagonal())
+            ? Decorator::getAnswerBorder("квадрат поместиться в круге")
+            : Decorator::getAnswerBorder("круг поместиться в квадрате");
     }
 
     private function getCircleDiameter(): ?int
@@ -25,12 +34,5 @@ class Task extends Desc
     {
         $squadArea =  (int) readline(self::SQUAD_PHRASE);
         return sqrt(2 * $squadArea);
-    }
-
-    private function calculate(): void
-    {
-        echo ($this->getCircleDiameter() >= $this->getSquadDiagonal())
-            ? Decorator::getAnswerBorder("квадрат поместиться в круге")
-            : Decorator::getAnswerBorder("круг поместиться в квадрате");
     }
 }

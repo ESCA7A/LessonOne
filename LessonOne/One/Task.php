@@ -3,6 +3,7 @@
 namespace Shellpea\One;
 
 use Shellpea\Decorator;
+use Shellpea\TaskInterface;
 
 class Task extends \Shellpea\Desc
 {
@@ -11,25 +12,25 @@ class Task extends \Shellpea\Desc
 
     public function __call($name, $arguments)
     {
-        $this->foo();
+        echo TaskInterface::TASK_ONE;
+        return $this->foo();
     }
 
     private function foo()
     {
-        echo self::TASK_ONE;
-
         $num1 = readline(self::INPUT_1);
         $num2 = readline(self::INPUT_2);
 
         if (!is_numeric($num1) || !is_numeric($num2)) {
             Decorator::getAnswerBorder('скорее всего вы ввели не число. Попробуйте еще раз');
-            $this->foo();
+
+            return $this->foo();
         }
 
-        if($num1 >= $num2) {
+        if ($num1 >= $num2) {
             Decorator::getAnswerBorder($num1 + $num2);
         } else {
-            Decorator::getAnswerBorder(($num1 * $num2));
+            Decorator::getAnswerBorder($num1 * $num2);
         }
     }
 }

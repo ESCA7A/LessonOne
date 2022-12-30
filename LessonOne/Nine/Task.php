@@ -4,6 +4,7 @@ namespace Shellpea\Nine;
 
 use Shellpea\Desc;
 use Shellpea\Decorator;
+use Shellpea\TaskInterface;
 
 class Task extends Desc
 {
@@ -13,10 +14,11 @@ class Task extends Desc
 
     public function __call($name, $arguments)
     {
-        $this->getDataAboutTriangle();
+        echo TaskInterface::TASK_NINE;
+        $this->getFiguresData();
     }
 
-    public function getDataAboutTriangle(): void
+    public function getFiguresData(): void
     {
         $a = abs((int) readline(self::TRIANGLE_A));
         $b = abs((int) readline(self::TRIANGLE_B));

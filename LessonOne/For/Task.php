@@ -3,6 +3,7 @@
 namespace Shellpea\For;
 
 use Shellpea\Decorator;
+use Shellpea\TaskInterface;
 
 class Task extends \Shellpea\Desc
 {
@@ -10,13 +11,12 @@ class Task extends \Shellpea\Desc
 
     public function __call($name, $arguments)
     {
+        echo TaskInterface::TASK_FOR;
         $this->getPitch();
     }
 
     public function getPitch()
     {
-        echo self::TASK_FOR;
-
         $pitch = readline(self::INPUT);
 
         if ($pitch < 28 && $pitch >= 0) Decorator::getAnswerBorder("НЕДОЛЕТ");

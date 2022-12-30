@@ -2,20 +2,30 @@
 
 namespace Shellpea\Three;
 
+use Shellpea\DeskInterface;
+use Shellpea\TaskInterface;
+
 class Task extends \Shellpea\Desc
 {
     const INPUT = PHP_EOL . "number A: ";
+
     public function __call($name, $arguments)
     {
-        $this->foo();
+        echo TaskInterface::TASK_THREE;
+        return $this->foo();
     }
 
     private function foo()
     {
-        echo self::TASK_THREE;
+        $numberA = readline(self::INPUT);
 
-        $a = readline(self::INPUT);
+        if ($numberA % 2 != 0) {
+            echo DeskInterface::THANKS_MESSAGE;
 
-        echo ($a % 2 == 0) ? self::FALSE : self::THANKS_MESSAGE;
+        } else {
+            echo DeskInterface::ERROR_INPUT;
+
+            return $this->foo();
+        }
     }
 }

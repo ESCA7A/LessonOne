@@ -28,20 +28,15 @@ interface DeskInterface
          | Что бы вызвать подсказку со списком задач используйте <help> или <list>                              |
          +------------------------------------------------------------------------------------------------------+" . PHP_EOL;
 
-    const ERROR_INPUT = PHP_EOL . "
-         +-----------------------------+
-         | incorrect value. Try again  |
-         +-----------------------------+" . PHP_EOL;
-
     const THANKS_MESSAGE = PHP_EOL . "
          +-----------------------------+
          |      THANKS MESSAGE         |
          +-----------------------------+" . PHP_EOL;
 
-    const FALSE = PHP_EOL. "
-         +---------------+
-         |   FALSE !!!   |
-         +---------------+" . PHP_EOL;
+    const ERROR_INPUT = PHP_EOL . "
+         +-----------------------------+
+         | incorrect value. Try again  |
+         +-----------------------------+" . PHP_EOL;
 
     const ACCEPT = PHP_EOL . "
         +---------------+
